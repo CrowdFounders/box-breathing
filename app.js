@@ -6,6 +6,12 @@
                 })
         };
 
+        document.addEventListener('DOMContentLoaded', function () {
+            const breathIndicator = document.getElementById('breath-indicator');
+            breathIndicator.classList.add('fade-in');
+        });
+        
+
         window.addEventListener('load', () => {
 
             var startTime = Date.now();

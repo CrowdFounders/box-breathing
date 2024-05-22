@@ -233,19 +233,23 @@ input:checked + .slider:before {
     width: var(--box-side-length);
     height: var(--box-side-length);
     border: var(--box-border-width) solid var(--box-border-color);
+    position: relative;
+    overflow: hidden;
 }
 
 #breath-indicator {
-    background: var(--breath-gradient);
-    background-size: 700% 700%;
+    background: url('where-I-bought-the-world.jpg') no-repeat center center;
+    background-size: cover;
     width: 100%;
+    height: 100%;
     position: absolute;
-    box-sizing: border-box;
     bottom: 0;
-    border-top: var(--box-border-width) solid var(--box-border-color);
-    z-index: -1;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
 
-    animation: breath-indicator-animation var(--animation-options);
+#breath-indicator.fade-in {
+    opacity: 1;
 }
 
 @keyframes breath-indicator-animation {
